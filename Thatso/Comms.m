@@ -45,7 +45,7 @@
                 [[PFUser currentUser] setObject:[me objectForKey:UserFirstName] forKey:UserFirstName];
                 [[PFUser currentUser] setObject:[me objectForKey:UserLastName] forKey:UserLastName];
                 [[PFUser currentUser] setObject:[me objectForKey:UserFullName] forKey:UserFullName];
-                [[PFUser currentUser] saveInBackground];
+                [[PFUser currentUser] save];
                 
                 // Launch another thread to handle the download of the user's Facebook profile picture
                 [Comms getProfilePictureForUser:[user objectForKey:UserFacebookID] withBlock:nil];

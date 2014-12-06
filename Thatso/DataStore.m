@@ -42,6 +42,10 @@ static DataStore *instance = nil;
 +(NSString *) getFriendObjectForKey: (NSString *)key forFriendID: (NSString *) fbId
 {
     //Download user if it doesnt exist
+    if(fbId == nil)
+    {
+        return @"";
+    }
     NSDictionary *friend = [[DataStore instance].fbFriends objectForKey:fbId];
     if(friend == nil)
     {
